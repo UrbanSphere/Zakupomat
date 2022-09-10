@@ -115,3 +115,21 @@ class Recipe:
 
         connection.commit()
         connection.close()
+
+
+    def to_dict(self):
+        return {'name': self.name, 'category': self.cat, 'description': self.des, 'ingredients': self.ingr}
+
+
+    @staticmethod
+    def show_all_products():
+        connection = sqlite3.connect('database.db')
+        cursor = connection.cursor()
+
+        query = 'SELECT * FROM recipes'
+        result = cursor.execute(query)
+        row = result.fetchall()
+
+        connection.commit()
+        connection.close()
+        return row
