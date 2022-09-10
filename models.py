@@ -38,6 +38,8 @@ class Product:
 
 
     def del_from_db(self):
+        if self.find_by_name(self.name) is None:
+            raise NameError(f'No such product called \'{self.name}\' to be deleted')
         connection = sqlite3.connect('database.db')
         cursor = connection.cursor()
 
