@@ -1,16 +1,10 @@
-import sqlite3
+from models import *
 
 
-class Product:
+Mleko = Product('mleko', 'nabiał', 'ml').add_to_db()
+Chleb = Product('chleb', 'pieczywo', 'szt').add_to_db()
 
-    def __init__(self, name, cat, unit, amount=float):
-        self.name = name
-        self.cat = cat
-        self.unit = unit
-        self.amount = amount
 
-    def add_to_db(self):
-        connection = sqlite3.connect('products.db')
-        cursor = connection.cursor()
+print(Product.show_all_products())
 
 
