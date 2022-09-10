@@ -20,15 +20,12 @@ class Product:
         if row:
             return cls(row[0], row[1], row[2], row[3])
         else:
-            raise NameError(f'No such item called \'{name}\' found')
+            return None
 
 
     def add_to_db(self):
-        try:
-            self.find_by_name(self.name)
+        if self.find_by_name(self.name):
             self.del_from_db()
-        except NameError:
-            print(f'No such product called \'{self.name}\' found.')
 
         connection = sqlite3.connect('database.db')
         cursor = connection.cursor()
