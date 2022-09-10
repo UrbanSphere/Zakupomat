@@ -67,3 +67,12 @@ class Product:
         connection.close()
         return row
 
+
+class Recipe:
+    def __init__(self, name, category, description, ingredients: list):
+        self.name = name
+        self.cat = category
+        self.des = description
+        self.ingr = ingredients
+
+
