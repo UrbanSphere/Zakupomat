@@ -1,3 +1,6 @@
 .idea/
 venv/
 requirements.txt
+test.py
+database.db
+__pycache__/
