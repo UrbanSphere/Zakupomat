@@ -1,0 +1,13 @@
+<StartMenu>
+
+    GridLayout:
+
+        cols: 1
+        rows: 5
+        spacing: 20
+
+        Button:
+            id: create_shopping_list
+            text: 'Stwórz listę zakupów'
+            on_press: root.manager.current = 'list_creator'
+            on_press: root.on_pressed()
